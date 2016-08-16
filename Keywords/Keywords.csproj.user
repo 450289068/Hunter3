@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <StartArguments>127.0.0.1 db_specimen root king+5688 dictionary.txt</StartArguments>
+    <StartWorkingDirectory>D:\2.模糊测试\2.Coding\Hunter3\Bin\ServerConfiguration\</StartWorkingDirectory>
+  </PropertyGroup>
+</Project>

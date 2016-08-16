@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1AC70CA5-B5CF-48B3-BA84-F76C4874425C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Hunter3</RootNamespace>
+    <AssemblyName>Hunter3</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\Hunter3\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.6.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\uil\controls\HunterFormTitle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\uil\controls\HunterFormTitle.Designer.cs">
+      <DependentUpon>HunterFormTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\uil\forms\HunterMain.Methods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\uil\forms\FormQuickCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\uil\forms\FormQuickCreate.Designer.cs">
+      <DependentUpon>FormQuickCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\engine\HunterPlugin.cs" />
+    <Compile Include="src\engine\AbandonList.cs" />
+    <Compile Include="src\data\Database.cs" />
+    <Compile Include="src\data\HunterDatabaseHelper.cs" />
+    <Compile Include="src\engine\HunterConfig.cs" />
+    <Compile Include="src\engine\HunterConsole.cs" />
+    <Compile Include="src\engine\HunterProxy.cs" />
+    <Compile Include="src\engine\Utilities.cs" />
+    <Compile Include="src\engine\DownloadInfo.cs" />
+    <Compile Include="src\engine\Hunter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\engine\HunterDownload.cs" />
+    <Compile Include="src\engine\HunterDownloadThread.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\uil\controls\HunterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\engine\HunterUri.cs" />
+    <Compile Include="src\engine\ProjectInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\engine\Recorder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\engine\UriResource.cs" />
+    <Compile Include="src\engine\WindowsAPI.cs" />
+    <Compile Include="src\support\IPlugin.cs" />
+    <Compile Include="src\uil\controls\HunterProfessionalRender.cs" />
+    <Compile Include="src\uil\controls\HunterRichTextBoxHTMLGetterBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\uil\controls\HunterRichTextBoxHTMLGetterBar.Designer.cs">
+      <DependentUpon>HunterRichTextBoxHTMLGetterBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\uil\controls\HunterButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="src\uil\controls\HunterButton.Designer.cs">
+      <DependentUpon>HunterButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\uil\controls\HunterSplitContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="src\uil\controls\HunterRichTextBoxSearchBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\uil\controls\HunterRichTextBoxSearchBar.Designer.cs">
+      <DependentUpon>HunterRichTextBoxSearchBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\uil\controls\HunterWebClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="src\uil\controls\PropertyGridUI.cs" />
+    <Compile Include="src\uil\forms\HunterAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\uil\forms\HunterAbout.designer.cs">
+      <DependentUpon>HunterAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\uil\forms\HunterEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\uil\forms\HunterEditor.Designer.cs">
+      <DependentUpon>HunterEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\uil\forms\HunterLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\uil\forms\HunterLog.Designer.cs">
+      <DependentUpon>HunterLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\uil\forms\HunterMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\uil\forms\HunterMain.Designer.cs">
+      <DependentUpon>HunterMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\uil\controls\HunterRichTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="src\data\Strategy.cs" />
+    <Compile Include="src\data\StrategyData.cs" />
+    <Compile Include="src\data\StrategyReader.cs" />
+    <Compile Include="src\data\XMLDatabase.cs" />
+    <Compile Include="src\data\XMLDefinition.cs" />
+    <Compile Include="src\uil\forms\HunterProxyFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\uil\forms\HunterProxyFilter.Designer.cs">
+      <DependentUpon>HunterProxyFilter.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="src\uil\controls\HunterFormTitle.resx">
+      <DependentUpon>HunterFormTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\uil\forms\FormQuickCreate.resx">
+      <DependentUpon>FormQuickCreate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\uil\controls\HunterForm.resx">
+      <DependentUpon>HunterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\uil\controls\HunterRichTextBoxHTMLGetterBar.resx">
+      <DependentUpon>HunterRichTextBoxHTMLGetterBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\uil\controls\HunterButton.resx">
+      <DependentUpon>HunterButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\uil\controls\HunterRichTextBoxSearchBar.resx">
+      <DependentUpon>HunterRichTextBoxSearchBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\uil\forms\HunterAbout.resx">
+      <DependentUpon>HunterAbout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\uil\forms\HunterEditor.resx">
+      <DependentUpon>HunterEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\uil\forms\HunterLog.resx">
+      <DependentUpon>HunterLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\uil\forms\HunterMain.resx">
+      <DependentUpon>HunterMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="src\uil\controls\HunterRichTextBox.resx">
+      <DependentUpon>HunterRichTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\uil\forms\HunterProxyFilter.resx">
+      <DependentUpon>HunterProxyFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+    <Content Include="hunter3.ico" />
+    <Content Include="hunter3_small.ico" />
+    <None Include="res\spider_2 - 副本.png" />
+    <None Include="res\spider_2.ico" />
+    <None Include="res\hover.png" />
+    <None Include="res\buttoncheckedhover.png" />
+    <None Include="res\buttonchecked.png" />
+    <None Include="res\button.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Strategy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <!-- 这是一个策略模板，编辑完成后，请放入Strategy文件夹下 -->
+  <Information>
+    <!-- 只有Title设置为非空，才会被Hunter读取哦 -->
+    <Title>雅虎日本</Title>
+    <Version>1.0</Version>
+    <Author>于益偲 (Froser)</Author>
+    <Uri>www.yahoo.co.jp</Uri>
+    <Message />
+  </Information>
+  <Configuration>
+    <!-- 使用IE内核分析 -->
+    <UseIE>false</UseIE>
+    <!-- Index起始值 -->
+    <StartIndex>1</StartIndex>
+    <!-- 搜索的步长值 -->
+    <IndexStep>10</IndexStep>
+    <!-- 搜索的最大Index -->
+    <MaxIndex>770</MaxIndex>
+    <!-- HTTP URL头 -->
+    <HttpHead>http://search.yahoo.co.jp/search?pstart=1&amp;</HttpHead>
+    <!-- 匹配链接的正则表达式，其中地址放入url捕获组中，链接文字放入text捕获组中 -->
+    <Regex>&lt;div class="hd"&gt;&lt;h3&gt;&lt;a href="(?&lt;url&gt;(.*?))\"(.*?)&gt;(?&lt;text&gt;(.*?))&lt;/a&gt;</Regex>
+    <!-- 第一个搜索的网页URL -->
+    <FirstURL>{HttpHead}p=filetype:{filetype}+{keyword}&amp;b={StartIndex}</FirstURL>
+    <!-- 第index个搜索的网页URL -->
+    <SearchURL>{HttpHead}p=filetype:{filetype}+{keyword}&amp;b={index}</SearchURL>
+    <!-- 是否需要重定向，依据搜索引擎网站而定 -->
+    <Redirect>false</Redirect>
+    <!-- 出现以下字符串，视为乱码，在给文件命名时需要更换策略 -->
+    <ConfusionString>
+      <String />
+    </ConfusionString>
+    <!-- 出现以下字符串，直接跳过对这一项的搜索 -->
+    <ForbiddenString>
+      <String>
+        <string>百度文库</string>
+      </String>
+    </ForbiddenString>
+    <!-- 防止被网站封锁IP，需要按照如下方法伪装Request -->
+    <Disguise>
+      <Accept>text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</Accept>
+      <KeepAlive>true</KeepAlive>
+      <UserAgent>Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0</UserAgent>
+      <Timeout>10000</Timeout>
+      <AllowAutoRedirect>true</AllowAutoRedirect>
+      <Cookie>B={RandomString(13)}&amp;b=3&amp;s=j5; JV=sqO2IG8q.R8VoYCYTMCoFUVxA.jLJp6wPIKFatPwwKeEOnaIuaXFFfO.8h_ZQ7zw.olQhFHO41ZB8BE3MvDuWmsEF4rSq9.fNwZwbOo4ZETXR6_cXVTxzTGk_4lY5tLMDNVsDnNLp8iGt6529oDMFaziV4TjBibcaQHbUgeRCPNoJm788o6ATqxrI_.4nzX.XWrfJIgomnbo6zhYyylTC9wJJm3Mn0HeVDSgZtX1bu9kRlAIw4HcoKERlbsKxTnXKOXyoUuHPHpsA5SAC2xd_qDVpns5zfBGzfStNnQvhmefq55fytt_GwKPn5vCRh65BUSyifVKfRTJ64sBdbTRmq7cmZ00y2ghtcB48vLNYRs7Q8ymGrcKPspYoaZh0Mph8qiPh7zIlkPqW1lhkuYQMS1giiXEw.5mmR7Qvk5ZR4_1EwbFdKf94QDBOByJvzxI6JyK8OcLjQhzkwS_FUm6vspkhQketCJ8Paw43DADaqZVO6Zpo7nyw4p6oteoPYeD; YABW=v=1&amp;b=125&amp;c=1&amp;i4=cWpqAw--&amp;t4=1386751123&amp;i6=&amp;t6=&amp;e={RandomString(10)}</Cookie>
+    </Disguise>
+  </Configuration>
+</Strategy>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Strategy xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Information>
+    <Title>百度</Title>
+    <Version>1.0</Version>
+    <Author>于益偲 (Froser)</Author>
+    <Uri>www.baidu.com</Uri>
+    <Message />
+  </Information>
+  <Configuration>
+    <!-- 使用IE内核分析 -->
+    <UseIE>false</UseIE>
+    <!-- Index起始值 -->
+    <StartIndex>0</StartIndex>
+    <!-- 搜索的步长值 -->
+    <IndexStep>10</IndexStep>
+    <!-- 搜索的最大Index -->
+    <MaxIndex>770</MaxIndex>
+    <!-- HTTP URL头 -->
+    <HttpHead>http://www.baidu.com/s?tn=baiduhome_pg&amp;ie=utf-8&amp;cl=3</HttpHead>
+    <!-- 匹配链接的正则表达式，其中地址放入url捕获组中，链接文字放入text捕获组中 -->
+    <Regex>href="(?&lt;url&gt;http(s)?://www.baidu.com/link\?url=(.*?))"(\s*)(.*)(\s*)&gt;(?&lt;text&gt;(.*?))&lt;/a&gt;</Regex>
+    <!-- 第一个搜索的网页URL -->
+    <FirstURL>{HttpHead}&amp;wd=filetype:{filetype}+{keyword}&amp;pn={StartIndex}</FirstURL>
+    <!-- 第index个搜索的网页URL -->
+    <SearchURL>{HttpHead}&amp;wd=filetype:{filetype}+{keyword}&amp;pn={index}</SearchURL>
+    <!-- 是否需要重定向，依据搜索引擎网站而定 -->
+    <Redirect>true</Redirect>
+    <!-- 出现以下字符串，视为乱码，在给文件命名时需要更换策略 -->
+    <ConfusionString>
+      <String>
+        <string>html鐗</string>
+      </String>
+    </ConfusionString>
+    <!-- 出现以下字符串，直接跳过对这一项的搜索 -->
+    <ForbiddenString>
+      <String>
+        <string>百度文库</string>
+      </String>
+    </ForbiddenString>
+    <!-- 防止被网站封锁IP，需要按照如下方法伪装Request -->
+    <Disguise>
+      <Accept>text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8</Accept>
+      <KeepAlive>true</KeepAlive>
+      <UserAgent>Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0</UserAgent>
+      <Timeout>10000</Timeout>
+      <AllowAutoRedirect>true</AllowAutoRedirect>
+      <Cookie>BAIDUID={RandomString(32)}:FG=1; BDUSS=wyQ0NqdDF-bngyRHZ1bmpsV0s5Ujl-STM2R0xiVmZUa21QZTZHQWxYejBuaWxTQVFBQUFBJCQAAAAAAAAAAAEAAAA7Q9oARnJvc2VyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPQRAlL0EQJSMm; BDRCVFR[gltLrB7qNCt]=mk3SLVN4HKm; H_PS_PSSID=2776_2976_2980_3109_3225; BDRCVFR[feWj1Vr5u3D]=mk3SLVN4HKm</Cookie>
+    </Disguise>
+  </Configuration>
+</Strategy>
